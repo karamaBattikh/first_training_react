@@ -7,7 +7,7 @@ import withUserListStyle from './withUserListStyle';
 
 import GetAllUser from '../../graphql/query/GetAllUser';
 
-const UserList = ({ className }) => (
+const UserList = ({ navigationTo, className, props }) => (
   <Query query={GetAllUser}>
     {({ loading, error, data }) => {
       if (loading) return <div> Loading ... </div>;
@@ -47,7 +47,13 @@ const UserList = ({ className }) => (
         <div className={className}>
           <h2 className="list-user__title"> List Of USers </h2>
           <div className="list-user__table--border">
-            <button className="list-user__button--add" type="button">Add USer</button>
+            <button
+              className="list-user__button--add"
+              type="button"
+              onClick={() => navigationTo({ path: 'add/user', prop: props })}
+            >
+              Add User
+            </button>
             <ReactTable
               data={data.UserList}
               columns={columns}
@@ -61,6 +67,8 @@ const UserList = ({ className }) => (
 );
 
 UserList.propTypes = {
+  props: PropTypes.object,
+  navigationTo: PropTypes.func,
   className: PropTypes.string,
 };
 

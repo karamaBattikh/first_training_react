@@ -1,7 +1,13 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 import UserList from '../components/User/UserList';
+import { navigationTo } from '../utils/NavigationUtils';
 
+const UserListPage = (props) => (
+  <UserList
+    navigationTo={navigationTo}
+    props={props}
+  />
+);
 
-const UserListPage = () => <UserList />;
-
-export default UserListPage;
+export default withRouter(UserListPage);
