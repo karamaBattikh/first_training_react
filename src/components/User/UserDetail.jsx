@@ -16,10 +16,8 @@ const UserDetails = ({
     variables={{ idUser: id }}
   >
     {({ loading, error, data }) => {
-      console.log('.. match ..', id);
       if (loading) return <div> Loading ... </div>;
       if (error) return <div> Error ... </div>;
-      console.log('User By Id', data);
       return (
         <div className={className}>
           <h2 className="user-title"> Detail of User </h2>
@@ -61,6 +59,7 @@ const UserDetails = ({
               <button
                 type="button"
                 className="user__detail-button"
+                onClick={() => navigationTo({ prop: props })}
               >
                 ListOfUsers
               </button>
