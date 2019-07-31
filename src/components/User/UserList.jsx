@@ -4,7 +4,7 @@ import ReactTable from 'react-table';
 import PropTypes from 'prop-types';
 
 import withUserListStyle from './withUserListStyle';
-
+import UserDelete from './UserDelete';
 import GetAllUser from '../../graphql/query/GetAllUser';
 
 const UserList = ({ navigationTo, className, props }) => (
@@ -44,7 +44,7 @@ const UserList = ({ navigationTo, className, props }) => (
                 Show
               </button>
               <button type="button">Edit</button>
-              <button type="button">Delite</button>
+              <UserDelete idUser={row.original.id} />
             </div>
           ),
         },
