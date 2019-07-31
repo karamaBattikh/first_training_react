@@ -13,11 +13,7 @@ const withUserListStyle = (WrappedComponent) => styled(WrappedComponent)`
     border: 2px solid black;
     border-radius: 2px;
   }
-  .list-user__button{
-    margin: 1%;
-    width : 30%;
-    padding: 0.5em;
-  }
+
   .list-user__button--add{
     margin: 1% 1% 1% 80%;
     width : 20%;
