@@ -43,7 +43,12 @@ const UserList = ({ navigationTo, className, props }) => (
               >
                 Show
               </button>
-              <button type="button">Edit</button>
+              <button
+                type="button"
+                onClick={() => navigationTo({ idUser: row.original.id, path: 'update', prop: props })}
+              >
+                Edit
+              </button>
               <UserDelete idUser={row.original.id} />
             </div>
           ),
