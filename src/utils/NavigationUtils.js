@@ -3,6 +3,8 @@ const navigationTo = ({ idUser, prop, path }) => {
     prop.history.push(`/users/${path}/${idUser}`);
   } else if (idUser === undefined && path !== undefined) {
     prop.history.push(`/users/${path}`);
+  } else if (idUser === undefined && path === undefined) {
+    prop.history.push('/users');
   } else {
     prop.history.push(`/users/${idUser}`);
   }
