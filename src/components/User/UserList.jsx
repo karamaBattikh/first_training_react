@@ -35,10 +35,16 @@ const UserList = ({ navigationTo, className, props }) => (
         },
         {
           Header: 'Action',
-          Cell: () => (
+          Cell: (row) => (
             <div>
-              <button type="button">Show</button>
+              <button
+                type="button"
+                onClick={() => navigationTo({ idUser: row.original.id, prop: props })}
+              >
+                Show
+              </button>
               <button type="button">Edit</button>
+              <button type="button">Delite</button>
             </div>
           ),
         },
